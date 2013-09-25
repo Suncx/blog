@@ -2,11 +2,15 @@
     <div class="navbar-inner">
       <a class="brand" href="#">Suncx</a>
       <ul class="nav">
-        <li class="active"><%= link_to "首页", root_path%></li>
+        <li <% if params[:controller].to_s == "home"%>class="active"<% end %>><%= link_to "首页", root_path%></li>
+        <% if current_user.present? %>
+          <li <% if params[:controller].to_s == "admin/user_blogs"%>class="active"<% end %>><%= link_to "博客管理", admin_user_blogs_path%></li>
+        <% end %>
       </ul>
       <ul class="nav pull-right">
         <% if current_user.present? %>
           <li><a href="<%= admin_user_blogs_path()%>"><%= gravatar_tag current_user.email, :size => 20 %><%= current_user.email%></a><li>
+          <li><%= link_to "退出", destroy_user_session_path(), method: "delete"%></li>
         <% else %>
           <li><%= link_to "登录", new_user_session_path()%></li>
         <% end %>

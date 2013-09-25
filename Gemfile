@@ -50,3 +50,8 @@ end
 gem 'devise'
 gem 'gravatarify',  '~> 3.0.0' #获取头像
 gem 'inherited_resources' 
+gem 'simple_form'
+
+group :development, :test do
+  gem 'pry-rails'
+end
