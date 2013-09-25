@@ -1,0 +1,2 @@
+rvm_project_rvmrc=1
+rvm --create 2.0.0-p247@blog
