@@ -1,4 +1,5 @@
 Blog::Application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,5 +55,8 @@ Blog::Application.routes.draw do
   #     resources :products
   #   end
 
+  namespace :admin do
+    resources :user_blogs
+  end
 
 end

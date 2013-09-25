@@ -1,0 +1,22 @@
+<div class="pull-right">
+  <button type="button" class="btn btn-primary">添加博文</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <th>ID</th>
+    <th>所属者</th>
+    <th>标题</th>
+    <th>标签</th>
+    <th>操作</th>
+  </thead>
+  <tbody>
+    <% @user_blogs.each do |user_blog| %>
+      <tr><%= user_blog.id%></tr>
+      <tr><%= user_blog.user.email%></tr>
+      <tr><%= user_blog.title%></tr>
+      <tr><%#= user_blog.tags%></tr>
+      <tr><%#= user_blog.id%></tr>
+    <% end %>
+  </tbody>
+</table>
