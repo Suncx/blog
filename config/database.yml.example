@@ -1,29 +1,22 @@
-development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: blog_development
+common: &common
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  username: postgres
+  password: postgres
+
+development:
+  <<: *common
+  database: blog_development
 
 test:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
+  <<: *common
   database: blog_test
-  pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+
+staging:
+  <<: *common
+  database: blog_staging
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: blog_production
-  pool: 5
-  username: root
-  password:
-  socket: /var/run/mysqld/mysqld.sock
+  <<: *common
+  database: blog
