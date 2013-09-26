@@ -1,0 +1,24 @@
+<h3>所有标签一览</h3>
+<div class="pull-right">
+  <%= link_to "添加标签", new_admin_tag_path(), class: "btn btn-primary"%>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <th width="10%">ID</th>
+    <th width="80%">名称</th>
+    <th width="10%">操作</th>
+  </thead>
+  <tbody>
+    <% @tags.each do |tag| %>
+      <tr>
+        <td><%= tag.id%></td>
+        <td><%= tag.name%></td>
+        <td>
+          <%= link_to "修改", edit_admin_tag_path(tag)%> |
+          <%= link_to "删除", admin_tag_path(tag), method: :delete, confirm: "确认删除吗?"%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

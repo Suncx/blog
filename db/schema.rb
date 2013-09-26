@@ -11,18 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130925084842) do
+ActiveRecord::Schema.define(version: 20130926082006) do
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags_user_blogses", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "user_blog_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tags_user_blogses", ["tag_id"], name: "index_tags_user_blogses_on_tag_id", using: :btree
+  add_index "tags_user_blogses", ["user_blog_id"], name: "index_tags_user_blogses_on_user_blog_id", using: :btree
 
   create_table "user_blogs", force: true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "content"
-    t.boolean  "flag"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
+    t.integer  "click_count"
   end
 
-  add_index "user_blogs", ["flag"], name: "index_user_blogs_on_flag", using: :btree
   add_index "user_blogs", ["user_id"], name: "index_user_blogs_on_user_id", using: :btree
 
   create_table "users", force: true do |t|

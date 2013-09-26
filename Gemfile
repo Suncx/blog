@@ -52,6 +52,11 @@ gem 'gravatarify',  '~> 3.0.0' #获取头像
 gem 'inherited_resources' 
 gem 'simple_form'
 
+#mrakdown 在服务端解析&高亮
+gem 'redcarpet'
+gem 'coderay'
+
+
 group :development, :test do
   gem 'pry-rails'
 end

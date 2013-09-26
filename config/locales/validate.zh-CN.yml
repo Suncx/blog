@@ -1,0 +1,9 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        tag:
+          attributes:
+            name:
+              taken: "名称不能重复"
+              blank: "名称不能为空"

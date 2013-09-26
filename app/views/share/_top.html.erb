@@ -5,6 +5,7 @@
         <li <% if params[:controller].to_s == "home"%>class="active"<% end %>><%= link_to "首页", root_path%></li>
         <% if current_user.present? %>
           <li <% if params[:controller].to_s == "admin/user_blogs"%>class="active"<% end %>><%= link_to "博客管理", admin_user_blogs_path%></li>
+          <li <% if params[:controller].to_s == "admin/tags"%>class="active"<% end %>><%= link_to "标签管理", admin_tags_path%></li>
         <% end %>
       </ul>
       <ul class="nav pull-right">

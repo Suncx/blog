@@ -5,19 +5,24 @@
 
 <table class="table table-hover">
   <thead>
-    <th>ID</th>
-    <th>所属者</th>
-    <th>标题</th>
-    <th>标签</th>
-    <th>操作</th>
+    <th width="5%">ID</th>
+    <th width="10%">所属者</th>
+    <th width="40%">标题</th>
+    <th width="35%">标签</th>
+    <th width="10%">操作</th>
   </thead>
   <tbody>
     <% @user_blogs.each do |user_blog| %>
-      <tr><%= user_blog.id%></tr>
-      <tr><%= user_blog.user.email%></tr>
-      <tr><%= user_blog.title%></tr>
-      <tr><%#= user_blog.tags%></tr>
-      <tr><%#= user_blog.id%></tr>
+      <tr>
+        <td><%= user_blog.id%></td>
+        <td><%= user_blog.user.email%></td>
+        <td><%= user_blog.title%></td>
+        <td><%= user_blog.tags.map(&:name).join(",")%></td>
+        <td>
+          <%= link_to "修改", edit_admin_user_blog_path(user_blog)%> |
+          <%= link_to "删除", admin_user_blog_path(user_blog), method: :delete, confirm: "确认删除吗?"%>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>

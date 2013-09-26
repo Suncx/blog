@@ -61,6 +61,7 @@ Blog::Application.routes.draw do
 
   namespace :admin do
     resources :user_blogs
+    resources :tags
   end
 
 end
