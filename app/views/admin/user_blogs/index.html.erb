@@ -17,7 +17,7 @@
       <tr>
         <td><%= user_blog.id %></td>
         <td><%= user_blog.user.email%></td>
-        <td><%= user_blog.title %></td>
+        <td><%= link_to truncate(user_blog.title, length: 50), user_blog_path(user_blog) %></td>
         <td><%= user_blog.status %></td>
         <td><%= user_blog.tags.map(&:name).join(",") %></td>
         <td>

@@ -35,9 +35,10 @@
 .tit .del:hover{background-position:2px -198px;}
 .tit .markdown:hover{ background-position:0 -886px;}
 
-.con .text .infor_tag{margin-top: -10px;margin-bottom: 10px;}
-.text .img{ margin-bottom:10px; text-align:center;}
-.text img{ max-width:600px;}
+.blog_body{padding:20px 40px; font-size:14px; min-height:120px;}
+.con .blog_body .infor_tag{margin-top: -10px;margin-bottom: 10px;}
+.blog_body .img{ margin-bottom:10px; text-align:center;}
+.blog_body img{ max-width:600px;}
 .note_edit{ color:#999;  padding-left:18px; margin:20px 0 -20px 40px; color:#f60;}
 
 .con .info{ background:#f7f7f7; border-top:1px solid #eee; padding:10px 40px 10px 40px;border-radius: 0 0 5px 5px;-webkit-border-radius:  0 0 5px 5px;-moz-border-radius:  0 0 5px 5px;-khtml-border-radius:  0 0 5px 5px;}

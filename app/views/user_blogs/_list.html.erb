@@ -3,14 +3,14 @@
     <div class="tit clearfix">
       <%= link_to user_blog.title, user_blog_path(user_blog)%>
     </div>
-    <div class="text">
+    <div class="blog_body">
       <div class="infor_tag">    
         <% user_blog.tags.each do |tag| %>
           <a href="<%= root_path(tag_id: tag.id)%>">
           <span class="badge badge-info"><%= tag.name%></span></a>
         <% end %>
       </div>
-      <%= markdown(user_blog.content)%>
+      <%= markdown(truncate(user_blog.content, length: 100))%>
     </div>
     <div class="info clearfix">
       <div class="fr pull-right">

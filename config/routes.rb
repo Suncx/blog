@@ -62,7 +62,7 @@ Blog::Application.routes.draw do
   namespace :admin do
     resources :user_blogs do
       collection do
-        get :preview_content
+        post :preview_content
       end
     end
     resources :tags

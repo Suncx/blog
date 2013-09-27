@@ -10,7 +10,7 @@ $(document).ready ->
       data:
         content: content
       dataType: "json"
-      type: 'get'
+      type: 'post'
       success: (data, status) =>
         $("#preview_body").html(data.preview_body)
         $('#preview').modal('show')
