@@ -4,4 +4,8 @@ class Tag < ActiveRecord::Base
 
   # attr_accessible :name
   validates :name, :uniqueness => true, :presence => true
+
+  def user_blogs_count
+    self.user_blogs.public_blog.count
+  end
 end

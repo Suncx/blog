@@ -2,9 +2,19 @@
   <ul class="nav nav-tabs nav-stacked">
     <% Tag.all.each do |tag| %>
       <% if params[:tag_id].to_i == tag.id %>
-        <li class="active"><%= link_to tag.name, "javascript:void(0);" %></li>
+        <li class="active tag_link">
+          <a href="javascript:void(0);">
+            <%= tag.name %>
+            <span><%= tag.user_blogs_count%></span>
+          </a>
+        </li>
       <% else %>
-        <li><%= link_to tag.name, root_path(tag_id: tag.id)%></li>
+        <li class="tag_link">
+          <a href="<%= root_path(tag_id: tag.id)%>">
+            <%= tag.name %>
+            <span><%= tag.user_blogs_count%></span>
+          </a>
+        </li>
       <% end %>
     <% end %>
   </ul>

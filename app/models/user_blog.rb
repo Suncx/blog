@@ -7,4 +7,6 @@ class UserBlog < ActiveRecord::Base
   STATUS = [:public, :private]
 
   scope :public_blog, ->{where(status: "public")}
+
+  
 end
