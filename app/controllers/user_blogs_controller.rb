@@ -1,0 +1,2 @@
+class UserBlogsController < ApplicationController
+end

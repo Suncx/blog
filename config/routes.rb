@@ -60,8 +60,14 @@ Blog::Application.routes.draw do
   #   end
 
   namespace :admin do
-    resources :user_blogs
+    resources :user_blogs do
+      collection do
+        get :preview_content
+      end
+    end
     resources :tags
   end
+
+  resources :user_blogs
 
 end

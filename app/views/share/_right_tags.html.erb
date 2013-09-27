@@ -1,0 +1,11 @@
+<div class="con">
+  <ul class="nav nav-tabs nav-stacked">
+    <% Tag.all.each do |tag| %>
+      <% if params[:tag_id].to_i == tag.id %>
+        <li class="active"><%= link_to tag.name, "javascript:void(0);" %></li>
+      <% else %>
+        <li><%= link_to tag.name, root_path(tag_id: tag.id)%></li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>

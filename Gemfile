@@ -56,6 +56,9 @@ gem 'simple_form'
 gem 'redcarpet'
 gem 'coderay'
 
+#分页
+gem 'kaminari'
+
 
 group :development, :test do
   gem 'pry-rails'

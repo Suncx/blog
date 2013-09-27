@@ -5,4 +5,6 @@ class UserBlog < ActiveRecord::Base
   belongs_to :user
 
   STATUS = [:public, :private]
+
+  scope :public_blog, ->{where(status: "public")}
 end

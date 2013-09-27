@@ -1,0 +1,22 @@
+<div class="con">
+  <div class="tit clearfix">
+    <a href=""><%= @user_blog.title%></a>
+  </div>
+  <div class="text">
+    <div class="infor_tag">    
+      <% @user_blog.tags.each do |tag| %>
+        <span class="badge badge-info"><%= tag.name%></span>
+      <% end %>
+    </div>
+    <%= markdown(@user_blog.content)%>
+  </div>
+  <div class="info clearfix">
+    <div class="fr pull-right">
+      <span class="author"><%= @user_blog.user.user_name%></span>
+      <span class="time"><%= l @user_blog.created_at, format: :super_short %>发表</span>
+      <span class="edit"><%= l @user_blog.updated_at, format: :super_short %>更新</span>
+      <span class="views" title="浏览次数"><%= @user_blog.click_count.to_i %>次浏览</span>
+      <!-- <a class="comment" title="评论" href="/blog/45/ruby-framework-benchmark#comments">3</a> -->
+    </div>
+  </div>
+</div>

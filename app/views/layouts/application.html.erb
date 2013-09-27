@@ -8,6 +8,19 @@
   </head>
   <body>
     <%= render "share/top" %>
-    <%= yield %>
+    <div class="container">
+      <div class="row"> 
+        <div class="span9">
+          <div class="left">
+            <%= yield %>
+          </div>
+        </div>
+        <div class="span3 offset0">
+          <div class="right">
+            <%= render "share/right_tags"%>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

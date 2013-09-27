@@ -8,16 +8,18 @@
     <th width="5%">ID</th>
     <th width="10%">所属者</th>
     <th width="40%">标题</th>
-    <th width="35%">标签</th>
+    <th width="10%">权限</th>
+    <th width="25%">标签</th>
     <th width="10%">操作</th>
   </thead>
   <tbody>
     <% @user_blogs.each do |user_blog| %>
       <tr>
-        <td><%= user_blog.id%></td>
+        <td><%= user_blog.id %></td>
         <td><%= user_blog.user.email%></td>
-        <td><%= user_blog.title%></td>
-        <td><%= user_blog.tags.map(&:name).join(",")%></td>
+        <td><%= user_blog.title %></td>
+        <td><%= user_blog.status %></td>
+        <td><%= user_blog.tags.map(&:name).join(",") %></td>
         <td>
           <%= link_to "修改", edit_admin_user_blog_path(user_blog)%> |
           <%= link_to "删除", admin_user_blog_path(user_blog), method: :delete, confirm: "确认删除吗?"%>
@@ -26,3 +28,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @user_blogs %>
