@@ -1,1 +1,0 @@
-(function(){$(document).ready(function(){return $("#preview_link").click(function(){var e;return e=$("#content").val(),$.ajax({url:"/admin/user_blogs/preview_content",data:{content:e},dataType:"json",type:"get",success:function(e){return $("#preview_body").html(e.preview_body),$("#preview").modal("show")}})})})}).call(this);
